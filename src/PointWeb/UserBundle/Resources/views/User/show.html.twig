@@ -1,0 +1,80 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Page
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-users"></i> <a href="{{ path('admin_user') }}">Utilisateurs</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-eye"></i> Voir
+            </li>
+        </ol>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Nom d'utilisateur</h3>
+            </div>
+            <div class="panel-body">
+                {{ entity.username }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Prénom</h3>
+            </div>
+            <div class="panel-body">
+                {{ entity.firstName }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Nom</h3>
+            </div>
+            <div class="panel-body">
+                {{ entity.lastName }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Email</h3>
+            </div>
+            <div class="panel-body">
+                {{ entity.email }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Roles</h3>
+            </div>
+            <div class="panel-body">
+                {% for role in entity.roles %}
+                    <p>{{ role }}</p>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                <h3 class="panel-title">Actif ?</h3>
+            </div>
+            <div class="panel-body">
+                {% if entity.enabled == true %}{{ 'Oui' }}{% else %}{{ 'Non' }}{% endif %}
+            </div>
+        </div>
+
+        <a href="{{ path('admin_user') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Retour à la
+            liste</a>
+
+        {% if app.user.hasRole('ROLE_SUPER_ADMIN') %}
+        <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}" class="btn btn-primary"><i
+                    class="fa fa-pencil"></i>
+            Modifier</a>
+        {{ form(delete_form) }}
+        {% endif %}
+    </div>
+{% endblock %}

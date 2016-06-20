@@ -1,0 +1,4 @@
+point_web_pdf_pdf:
+    resource: "@PointWebPdfBundle/Resources/config/routing/admin_pdf.yml"
+    prefix:   /admin/pdf
+

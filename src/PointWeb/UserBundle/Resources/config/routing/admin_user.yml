@@ -1,0 +1,30 @@
+admin_user:
+    path:     /
+    defaults: { _controller: "PointWebUserBundle:User:index" }
+
+admin_user_show:
+    path:     /{id}/show
+    defaults: { _controller: "PointWebUserBundle:User:show" }
+
+admin_user_new:
+    path:     /new
+    defaults: { _controller: "PointWebUserBundle:User:new" }
+
+admin_user_create:
+    path:     /create
+    defaults: { _controller: "PointWebUserBundle:User:create" }
+    methods:  POST
+
+admin_user_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebUserBundle:User:edit" }
+
+admin_user_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebUserBundle:User:update" }
+    methods:  [POST, PUT]
+
+admin_user_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebUserBundle:User:delete" }
+    methods:  [POST, DELETE]

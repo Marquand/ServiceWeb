@@ -1,0 +1,9 @@
+point_web_referencing_keywords:
+    resource: "@PointWebReferencingBundle/Resources/config/routing/admin_keywords.yml"
+    prefix:   /admin/keywords
+
+point_web_referencing_referencing:
+    resource: "@PointWebReferencingBundle/Resources/config/routing/admin_referencing.yml"
+    prefix:   /admin/referencing
+
+

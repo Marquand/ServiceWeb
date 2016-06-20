@@ -1,0 +1,50 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Referencement des pages
+        </h1>
+        <ol class="breadcrumb">
+            <li class="active">
+                <i class="fa fa-bookmark"></i> Referencement des pages
+            </li>
+        </ol>
+    </div>
+
+    <div class="col-lg-12">
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Path</th>
+                <th style="width: 125px;">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for ref in referencing %}
+                {% if ref.online == true %}
+                    <tr>
+                        <td>
+                            <span>{{ ref.title }}</span>
+                        </td>
+                        <td>
+                            <span>{{ ref.path }}</span>
+                        </td>
+                        <td>
+                            <div class="btn-group-vertical">
+                                <a href="{{ path('admin_referencing_show', {'id':ref.id}) }}" class="btn btn-primary"><i
+                                            class="fa fa-eye"></i> Voir</a>
+                                <a href="{{ path('admin_referencing_edit', {'id':ref.id}) }}" class="btn btn-primary"><i
+                                            class="fa fa-pencil"></i> Modifier</a>
+                            </div>
+                        </td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('admin_referencing_new') }}" class="btn btn-primary"><i class="fa fa-plus-circle"></i> Ajouter</a>
+    </div>
+{% endblock %}

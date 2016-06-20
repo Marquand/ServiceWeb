@@ -1,0 +1,30 @@
+admin_referencing:
+    path:     /
+    defaults: { _controller: "PointWebReferencingBundle:Referencing:index" }
+
+admin_referencing_show:
+    path:     /{id}/show
+    defaults: { _controller: "PointWebReferencingBundle:Referencing:show" }
+
+admin_referencing_new:
+    path:     /new
+    defaults: { _controller: "PointWebReferencingBundle:Referencing:new" }
+
+admin_referencing_create:
+    path:     /create
+    defaults: { _controller: "PointWebReferencingBundle:Referencing:create" }
+    methods:  POST
+
+admin_referencing_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebReferencingBundle:Referencing:edit" }
+
+admin_referencing_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebReferencingBundle:Referencing:update" }
+    methods:  [POST, PUT]
+
+admin_referencing_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebReferencingBundle:Referencing:delete" }
+

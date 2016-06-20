@@ -1,0 +1,19 @@
+point_web_newsletter_newsletter:
+    resource: "@PointWebNewsletterBundle/Resources/config/routing/admin_newsletter.yml"
+    prefix:   /admin/newsletter
+
+point_web_newsletter_newsletter_abonnes:
+    resource: "@PointWebNewsletterBundle/Resources/config/routing/admin_newsletter_mail.yml"
+    prefix:   /admin/newsletter/abonnes
+
+point_web_newsletter_newsletter_group:
+    resource: "@PointWebNewsletterBundle/Resources/config/routing/admin_newsletter_group.yml"
+    prefix:   /admin/newsletter/group
+
+point_web_newsletter_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: PointWebNewsletterBundle:Default:index }
+
+point_web_newsletter:
+    resource: "@PointWebNewsletterBundle/Resources/config/routing/newsletter.yml"
+    prefix:   /newsletter

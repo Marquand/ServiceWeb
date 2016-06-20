@@ -1,0 +1,30 @@
+admin_contact:
+    path:     /
+    defaults: { _controller: "PointWebAppBundle:Contact:index" }
+
+admin_contact_show:
+    path:     /{id}/show
+    defaults: { _controller: "PointWebAppBundle:Contact:show" }
+
+admin_contact_new:
+    path:     /new
+    defaults: { _controller: "PointWebAppBundle:Contact:new" }
+
+admin_contact_create:
+    path:     /create
+    defaults: { _controller: "PointWebAppBundle:Contact:create" }
+    methods:  POST
+
+admin_contact_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebAppBundle:Contact:edit" }
+
+admin_contact_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebAppBundle:Contact:update" }
+    methods:  [POST, PUT]
+
+admin_contact_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebAppBundle:Contact:delete" }
+    methods:  [POST, DELETE]

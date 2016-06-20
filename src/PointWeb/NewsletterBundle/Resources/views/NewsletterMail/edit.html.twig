@@ -1,0 +1,41 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Modifier l'abonné
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-at"></i> <a href="{{ path('admin_newsletter_mail') }}">Gestion des abonnés</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-pencil-square"></i> Modification
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-12">
+        {{ form_start(edit_form, {'attr': {'class':'form-horizontal' }}) }}
+        <fieldset>
+            <div class="form-group">
+                {{ form_label(edit_form.email) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.email) }}
+                    {{ form_widget(edit_form.email) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.newsletterGroup) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.newsletterGroup) }}
+                    {{ form_widget(edit_form.newsletterGroup) }}
+                </div>
+            </div>
+        </fieldset>
+        {{ form_end(edit_form) }}
+
+        <a href="{{ path('admin_newsletter_mail') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i>
+            Retour à la liste</a>
+    </div>
+{% endblock %}
+

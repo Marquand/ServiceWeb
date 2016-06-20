@@ -1,0 +1,30 @@
+admin_newsletter:
+    path:     /
+    defaults: { _controller: "PointWebNewsletterBundle:Newsletter:index" }
+
+admin_newsletter_show:
+    path:     /{id}/show
+    defaults: { _controller: "PointWebNewsletterBundle:Newsletter:show" }
+
+admin_newsletter_new:
+    path:     /new
+    defaults: { _controller: "PointWebNewsletterBundle:Newsletter:new" }
+
+admin_newsletter_create:
+    path:     /create
+    defaults: { _controller: "PointWebNewsletterBundle:Newsletter:create" }
+    methods:  POST
+
+admin_newsletter_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebNewsletterBundle:Newsletter:edit" }
+
+admin_newsletter_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebNewsletterBundle:Newsletter:update" }
+    methods:  [POST, PUT]
+
+admin_newsletter_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebNewsletterBundle:Newsletter:delete" }
+    methods:  [POST, DELETE]

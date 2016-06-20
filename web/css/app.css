@@ -1,0 +1,433 @@
+/*************************************************************************
+ _____   _____   _   __   _   _____        _          __  _____   _____  
+|  _  \ /  _  \ | | |  \ | | |_   _|      | |        / / | ____| |  _  \ 
+| |_| | | | | | | | |   \| |   | |        | |  __   / /  | |__   | |_| | 
+|  ___/ | | | | | | | |\   |   | |        | | /  | / /   |  __|  |  _  { 
+| |     | |_| | | | | | \  |   | |        | |/   |/ /    | |___  | |_| | 
+|_|     \_____/ |_| |_|  \_|   |_|        |___/|___/     |_____| |_____/ 
+**************************************************************************
+Copyright 2015 POINT WEB
+type : screen
+categorie : structure site
+Auteur : SERCO POINTWEB
+site : 
+**************************************************************************/
+
+/************* COOKIES **************/
+#impliedsubmit{ background:#fff; color:#000; font-family: 'robotoregular'; padding:5px 10px; border:none; font-size:12px;}
+#cookiesdirective{opacity: 1 !important; margin: 0 auto !important; text-align: left !important; background-color: #fff6ce !important; border: 1px solid #bcb17b; color: #434343 !important;}
+#cookiesdirective a{color: #434343 !important; text-decoration: underline;}
+#impliedsubmit{background: none !important;  color: #434343 !important;}
+#impliedsubmit:hover{cursor: pointer;}
+/************* ANTI IE7 **************/
+#anti-ie7{width:100%;position: absolute; top:0; left:0;margin:0;padding:5px;background-color:#000; z-index:5000;font-family:Arial, Helvetica, sans-serif;font-size:12px;color:white;padding:10px}
+.titreAntiIe{font-size:30px;margin:0;margin-bottom:10px;padding:0;font-weight:bold}
+#anti-ie7 a{color:#000;font-weight:bold;text-decoration:none}
+#anti-ie7 a.close{float:right;text-decoration:none;}
+.close{display:block; font-size:14px; width:76px; height:20px; padding:2px 0 0 30px; background:url(../images/btn-close.gif) no-repeat;
+margin-right:10px; float:right; margin-top:20px}
+.btn-ie{display:block; width:103px; height:19px; padding:3px 0 0 30px;  background:url(../images/btn-ie.gif) no-repeat; margin-top:20px; float:left}
+
+/************* GENERAL **************/
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    list-style-position: inside;
+}
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; margin:0; padding:0; outline:none; }
+section,article,header,footer,nav,aside,hgroup {
+    display: block;
+}
+table,td,blockquote,code,pre,textarea,input,video {
+  max-width: 100%;
+}
+p, dd, ul{
+	word-wrap: break-word; 
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto; 
+	-o-hyphens: auto; 
+	hyphens: auto;
+}
+li {
+    list-style-type: none;
+}
+input, textarea, button {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0; 
+}
+
+body {
+    font-family: sans-serif;
+}
+
+img {
+    border: none;
+    max-width: 100%;
+/*    width: 100%;*/
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: all ease 0.2s;
+    -ms-transition: all ease 0.2s;
+    -moz-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-weight: normal;
+}
+
+.paragraphe {
+    font-size: 12px;
+    margin-bottom: 15px;
+    line-height: 19px;
+    text-align: justify;
+}
+
+.center{
+    text-align: center;
+}
+
+hr{
+    outline: none;
+    border: none;
+}
+
+.clear {
+    clear: both;
+    background: none;
+    outline: none;
+    border: none;
+}
+
+.separateur{
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #d0d0d0;
+    margin: 10px auto;
+}
+/* Font-Size */
+.fs-11 {font-size: 11px;}
+.fs-12 {font-size: 12px;}
+.fs-13 {font-size: 13px;}
+.fs-14 {font-size: 14px;}
+.fs-15 {font-size: 15px;}
+.fs-16 {font-size: 16px;}
+.fs-17 {font-size: 17px;}
+.fs-18 {font-size: 18px;}
+.fs-19 {font-size: 19px;}
+.fs-20 {font-size: 20px;}
+.fs-25 {font-size: 25px;}
+.fs-30 {font-size: 30px;}
+
+/* Mise en forme */
+.txt_align_c {text-align: center;}
+.txt_align_l {text-align: left;}
+.txt_align_r {text-align: right;}
+.justify {text-align: justify;}
+.bold {font-weight: 600;}
+.black {font-weight: 800;}
+.italic {font-style: italic;}
+.uppercase {text-transform: uppercase;}
+.underline {text-decoration: underline;}
+
+/* Détection JS */
+
+#jserror {
+    background: #FFFFCC;
+    border: #FF0000 solid 1px;
+    color: #FF0000;
+    padding: 10px;
+    margin: 0 0 10px 0;
+    float: left;
+}
+#jserror dt {
+    font-weight: bold;
+}
+
+.myhr {
+    border: none;
+    outline: none;
+}
+
+/* ScrollToTop */
+
+#scrollToBottom, #scrollToTop{ display: none;}
+
+#scrollToBottom a{
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    background :#666 url("../images/scrollbottom.png") no-repeat 10px 18px;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    width:50px;
+    height:50px;
+    text-indent: -9999px;
+    display: block;
+    outline: none;
+    color: #FFF;
+    text-align: center;
+}
+
+#scrollToTop a{
+    position: fixed;
+    right: 2%;
+    bottom: 2%;
+    background :#666 url("../images/scrolltop.png") no-repeat 10px 13px;
+    width:50px;
+    height:50px;
+    -webkit-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    outline: none;
+    display: block;
+    text-indent: -9999px;
+    color: #FFF;
+    text-align: center;
+}
+/*--------------------------< FLASH NOTICE >--------------------------*/
+
+.flash-notice{
+    color: #e64014;
+    background: #f5dcdc;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 1em;
+    border:#e64014 solid 1px;
+}
+
+.flash-notice-validate{
+    color: #50a98d;
+    background: #daf0e9;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 1em;
+    border:#50a98d solid 1px;
+}
+
+/*----------------------------------------------------< HEADER >---------------------------------------------------*/
+/*----------------------------------------------------< CONTENT >---------------------------------------------------*/
+/*----------------------------------------------------< FOOTER >---------------------------------------------------*/
+/*----------------------------------------------------< CONTACT >---------------------------------------------------*/
+/*----------------------------------------------------< COOKIES >---------------------------------------------------*/
+/*----------------------------------------------------< CAPTCHA >---------------------------------------------------*/
+#captcha{
+    font-size:13px;
+    color: #404040;
+    line-height: 20px;
+    border: 1px solid #b5b5b5;
+    padding: 10px;
+}
+#captcha *{
+    /* Enlever cette ligne pour aligner à droite */
+    text-align: center;
+}
+#captcha legend{
+    font-weight: normal;
+}
+#captcha input{
+    background: white;
+    border: 1px solid #b5b5b5;
+}
+#captcha .captcha_question{
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+#captcha .captcha_question span{
+    color: #ac0000;
+}
+#captcha input::-webkit-input-placeholder {
+    color: #4e4e4e;
+    opacity: 1;
+    font-size: 13px;
+    text-align: center;
+}
+#captcha input::-moz-placeholder {
+    color: #4e4e4e;
+    opacity: 1;
+    font-size: 13px;
+    text-align: center;
+}
+#captcha input:-ms-input-placeholder {
+    color: #4e4e4e;
+    opacity: 1;
+    font-size: 13px;
+    text-align: center;
+}
+#captcha input:-moz-placeholder {
+    color: #4e4e4e;
+    opacity: 1;
+    font-size: 13px;
+    text-align: center;
+}
+
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,700,600);
+/*** Shadows ***/
+/*** Follow ***/
+@import url(https://fonts.googleapis.com/css?family=Comfortaa:400,700,300);
+a.follow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: #fff !important;
+    z-index: 9999;
+    font-family: 'Helvetica';
+    font-size: 11px;
+    text-transform: uppercase;
+    text-decoration: none;
+    opacity: .5;
+}
+a.follow svg {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+a.follow span {
+    display: none;
+}
+a.follow:hover {
+    opacity: 1;
+}
+a.follow:hover span {
+    display: inline;
+}
+
+body {
+    font-family: 'Open Sans', arial;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    background-color: #043A4F;
+}
+
+h1, h3 {
+    position: absolute;
+    z-index: 10;
+    color: white;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+h1 {
+    left: 6vw;
+    top: 8vw;
+    font-size: 7vw;
+    line-height: 6vw;
+    font-weight: 100;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+h3 {
+    left: 6vw;
+    top: 21vw;
+    font-size: 2vw;
+}
+h3 span {
+    opacity: .5;
+    font-weight: 300;
+    background-color: #07384B;
+    padding: 5px 9px;
+    display: inline-block;
+}
+
+.player {
+    width: 100%;
+    height: 36vw;
+    overflow: hidden;
+    position: relative;
+    pointer-events: none;
+}
+.player iframe {
+    width: 64vw;
+    height: 36vw;
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+}
+
+.svgs {
+    width: 100%;
+    height: 44vw;
+    position: absolute;
+    top: 0;
+    z-index: 50;
+}
+.svgs button {
+    position: absolute;
+    bottom: 0vw;
+    left: 6vw;
+    width: 30vw;
+    height: 8vw;
+    font-size: 3vw;
+    letter-spacing: .3vw;
+    text-transform: uppercase;
+    background-color: #B80A37;
+    border: 0;
+    border-radius: 4px;
+    z-index: 1;
+    color: white;
+    font-family: 'Comfortaa', sans-serif;
+    font-weight: 300;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.15), 0 15px 12px rgba(0, 0, 0, 0.12);
+    -webkit-transform: skew(-20deg);
+    transform: skew(-20deg);
+}
+.svgs button span {
+    -webkit-transform: skew(20deg);
+    transform: skew(20deg);
+    display: block;
+}
+
+.svg {
+    width: 100%;
+    height: 46vw;
+}
+
+.video-overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: soft-light;
+    background-color: #0da58e;
+    z-index: 1;
+}
+
+path.hide {
+    opacity: 0;
+}
+
+.videoloaded .svg path.transparent {
+    -webkit-transition: fill .1s, opacity 2s ease-out, stroke .5s;
+    transition: fill .1s, opacity 2s ease-out, stroke .5s;
+    fill: white;
+    opacity: 0;
+    stroke: rgba(255, 255, 255, 0.2);
+}

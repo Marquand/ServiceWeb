@@ -1,0 +1,26 @@
+admin_keywords:
+    path:     /
+    defaults: { _controller: "PointWebReferencingBundle:Keywords:index" }
+
+admin_keywords_new:
+    path:     /new
+    defaults: { _controller: "PointWebReferencingBundle:Keywords:new" }
+
+admin_keywords_create:
+    path:     /create
+    defaults: { _controller: "PointWebReferencingBundle:Keywords:create" }
+    methods:  POST
+
+admin_keywords_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebReferencingBundle:Keywords:edit" }
+
+admin_keywords_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebReferencingBundle:Keywords:update" }
+    methods:  [POST, PUT]
+
+admin_keywords_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebReferencingBundle:Keywords:delete" }
+    methods:  [POST, DELETE]

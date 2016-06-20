@@ -1,0 +1,7 @@
+.show_pdf{
+    background-image: url('../images/sansimage/pdf-default-img.jpg');
+    width: 400px;
+    height: 600px;
+    padding:0;
+    margin: 0;
+}

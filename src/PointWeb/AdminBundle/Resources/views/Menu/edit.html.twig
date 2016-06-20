@@ -1,0 +1,113 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Modifier le menu
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-sitemap"></i> <a href="{{ path('admin_menu') }}">Menu</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-pencil-square"></i> Modification
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-12">
+        {{ form_start(edit_form, {'attr': {'class':'form-horizontal' }}) }}
+        <fieldset>
+            <div class="form-group">
+                {{ form_label(edit_form.title) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.title) }}
+                    {{ form_widget(edit_form.title) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.description) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.description) }}
+                    {{ form_widget(edit_form.description) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.path) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.path) }}
+                    {{ form_widget(edit_form.path) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.position) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.position) }}
+                    {{ form_widget(edit_form.position) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.parent) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.parent) }}
+                    {{ form_widget(edit_form.parent) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">
+                    Déplacez vos fichiers ou cliquez dans la zone :
+                </label>
+                <div id="dropZoneFile" class="col-lg-10">
+                    <iframe src="{{ path('point_web_admin_update') }}">
+                    </iframe>
+                </div>
+            </div>
+            <ul class="files"
+                data-prototype="{% filter escape %}{% include 'PointWebAdminBundle:Form:prototype.html.twig' with {'form': edit_form.pictures.vars.prototype} %}{% endfilter %}">
+                {% for picture in edit_form.pictures %}
+                    <li class="formFile">
+                        <div class="form-group">
+                            {{ form_label(picture.name) }}
+                            <div class="col-lg-10">
+                                {{ form_errors(picture.name) }}
+                                {{ form_widget(picture.name) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(picture.description) }}
+                            <div class="col-lg-10">
+                                {{ form_errors(picture.description) }}
+                                {{ form_widget(picture.description) }}
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(picture.position) }}
+                            <div class="col-lg-10">
+                                {{ form_errors(picture.position) }}
+                                {{ form_widget(picture.position) }}
+                            </div>
+                        </div>
+                        {{ form_widget(picture.tmpPath) }}
+                        <div class="form-group">
+                            <label class="col-lg-2 control-label">
+                                Fichier :
+                            </label>
+                            <div class="col-lg-10">
+                                <img class="formFilePicture"
+                                     src="{% if picture.vars.value %}{{ asset(picture.vars.value.getWebPath(base)) }}{% endif %}"/>
+                            </div>
+                        </div>
+
+                    </li>
+                {% endfor %}
+            </ul>
+
+
+        </fieldset>
+        {% do edit_form.pictures.setRendered %}
+        {{ form_end(edit_form) }}
+
+        <a href="{{ path('admin_menu') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Retour à la
+            liste</a>
+        {{ form(delete_form) }}
+    </div>
+{% endblock %}

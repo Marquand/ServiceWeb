@@ -1,0 +1,11 @@
+point_web_admin_admin_menu:
+    resource: "@PointWebAdminBundle/Resources/config/routing/menu.yml"
+    prefix:   /menu
+
+point_web_admin_homepage:
+    path:     /
+    defaults: { _controller: PointWebAdminBundle:Default:index }
+
+point_web_admin_update:
+    path:     /upload
+    defaults: { _controller: PointWebAdminBundle:Default:upload }

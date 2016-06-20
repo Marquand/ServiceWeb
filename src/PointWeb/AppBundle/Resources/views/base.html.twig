@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params'))|getRef('title') }}</title>
+        <meta name="description" content="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params'))|getRef('description') }}"/>
+        <meta name="keywords" content="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params'))|getRef('keywords') }}"/>
+
+        <!--<meta property="og:url" content="http://www.monnomdedomainefinal.fr" />
+        <meta property="og:site_name" content="Nom du site à remplir" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="titre à remplir" />
+        <meta property="og:description" content="description à remplir" />
+        <meta property="og:image" content="http://www.monnomdedomainefinal.fr/images/og-image.jpg" />-->
+
+    <!--<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;"/>-->
+        <script src="{{ asset('jquery-ui-1.11.4.custom/external/jquery/jquery.js') }}"></script>
+        <script src="{{ asset('jquery-ui-1.11.4.custom/jquery-ui.min.js') }}"></script>
+        <script src="{{ asset('js/jquery.anti-ie7.js') }}"></script>
+        <script src="{{ asset('js/jquery-migrate-1.2.1.js') }}"></script>
+        <script src="{{ asset('js/jserror.js') }}"></script>
+        <script src="{{ asset('js/antispam.js') }}"></script>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <!--<script src="{{ asset('js/owl.carousel.min.js') }}"></script>-->
+    <!--<script src="{{ asset('js/imagelightbox.js') }}"></script>-->
+    <!--<script src="{{ asset('js/fonctionlightbox.js') }}"></script>-->
+    <!--<script src="{{ asset('js/respond.js') }}"></script>-->
+    <!--<script src="{{ asset('js/jquery.cookiesdirective.js') }}"></script>-->
+    <!--<script src="{{ asset('js/cookies.js') }}"></script>-->
+        <script src="{{ asset('js/app.js') }}"></script>
+        <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <!--<link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}" media="all"/>-->
+    <!--<link rel="stylesheet" href="{{ asset('css/owl.theme.css') }}" media="all"/>-->
+    <!--<link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}" media="all"/>-->
+    <!--<link rel="stylesheet" href="{{ asset('font-awesome-4.3.0/css/font-awesome.min.css') }}" media="all"/>-->
+    <!--<link rel="stylesheet" href="{{ asset('css/imagelightbox.css') }}" media="all"/>-->
+    <!--<link rel="stylesheet" href="{{ asset('css/foundation.css') }}" media="all"/>-->
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}" media="all"/>
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+        <!--[if IE]>
+            <style media="screen">
+               .myhr{margin:-0.45em 0}
+            </style>
+            <meta http-equiv="imagetoolbar" content="no" />
+        <![endif]-->
+    </head>
+    <body>
+    {% block body %}
+        <header id="header">
+            {% block header %}
+                {% include 'PointWebAppBundle::_header.html.twig' %}
+            {% endblock %}
+            <h1 title="{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params'))|getRef('h1Title') }}">{{ path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params'))|getRef('h1') }}</h1>
+        </header>
+        <div id="slider">
+            {% block slider %}
+                {% include 'PointWebAppBundle::_slider.html.twig' %}
+            {% endblock %}
+        </div>
+        <div id="menu">
+            {% block menu %}
+                {{ render(controller('PointWebAppBundle:Default:menu')) }}
+            {% endblock %}
+        </div>
+        <section id="content">
+            <noscript>
+                <dl id="jserror">
+                    <dt>Attention</dt>
+                    <dd>Si vous souhaitez utiliser pleinement toutes les capacités de ce site Internet vous devez activer javascript dans votre 		
+                    navigateur</dd>
+                </dl>
+            </noscript>
+            {% block content %}
+
+            {% endblock %}
+        </section>
+        {% endblock %}
+        
+        {% block footer %}
+           {{ render(controller('PointWebAppBundle:Default:footer')) }}
+        {% endblock %}
+        
+        <div id="scrollToTop"><a href="#">&#9650;</a></div>
+        {% block javascripts %}
+
+        {% endblock %}
+    </body>
+</html>

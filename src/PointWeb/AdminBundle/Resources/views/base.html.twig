@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>{% block title %}ESPACE D'ADMINISTRATION SERCO POINT-WEB{% endblock %}</title>
+    <script type="text/javascript" src="{{ asset('jquery-ui-1.11.4.custom/external/jquery/jquery.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('jquery-ui-1.11.4.custom/jquery-ui.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('tinymce/js/tinymce/tinymce.min.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-common-libraries.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-functions.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-thumbsgeneral.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-thumbsstrip.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-touchthumbs.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-panelsbase.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-strippanel.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-gridpanel.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-thumbsgrid.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('unitegallery-master/source/unitegallery/js/ug-tiles.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-tiledesign.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('unitegallery-master/source/unitegallery/js/ug-avia.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-slider.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-sliderassets.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-touchslider.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-zoomslider.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('unitegallery-master/source/unitegallery/js/ug-video.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-gallery.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-lightbox.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/js/ug-carousel.js') }}"></script>
+    <script type='text/javascript' src="{{ asset('unitegallery-master/source/unitegallery/js/ug-api.js') }}"></script>
+    <script type='text/javascript'
+            src="{{ asset('unitegallery-master/source/unitegallery/themes/grid/ug-theme-grid.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/moment.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/jquery.rowsorter.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('okfocus-okzoom/src/okzoom.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('font-awesome-4.3.0/css/font-awesome.min.css') }}" type="text/css"
+          media="all"/>
+    <link rel="stylesheet" href="{{ asset('jquery-ui-1.11.4.custom/jquery-ui.min.css') }}" type="text/css" media="all"/>
+    <link rel='stylesheet' href="{{ asset('unitegallery-master/source/unitegallery/css/unite-gallery.css') }}"
+          type='text/css' media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/pw-admin.css') }}" type="text/css" media="all"/>
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}" type="text/css" media="all"/>
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<div id="wrapper">
+    {% block body %}
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ path("point_web_admin_homepage") }}"><img class="logo"
+                                                                                           src="{{ asset('logo.png') }}"
+                                                                                           alt="logo"/></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    {{ render(controller('PointWebAdminBundle:Default:message')) }}
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i
+                                class="fa fa-user"></i> {{ app.user.fullname }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ path("fos_user_security_logout") }}"><i class="fa fa-fw fa-power-off"></i> Log
+                                Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    {% include 'PointWebAdminBundle::_menu_admin.html.twig' %}
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div class="container-fluid">
+                {% block content_full %}
+                    <div class="row">
+                        {% block body_content %}
+                            {% block content_left %}
+                            {% endblock %}
+                            {% block content_right %}{% endblock %}
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+<footer>
+    {% block footer %}{% endblock %}
+</footer>
+</html>

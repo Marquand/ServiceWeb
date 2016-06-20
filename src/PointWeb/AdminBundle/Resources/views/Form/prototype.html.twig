@@ -1,0 +1,33 @@
+<div class="form-group">
+    {{ form_label(form.name) }}
+    <div class="col-lg-10">
+        {{ form_errors(form.name) }}
+        {{ form_widget(form.name) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.description) }}
+    <div class="col-lg-10">
+        {{ form_errors(form.description) }}
+        {{ form_widget(form.description) }}
+    </div>
+</div>
+<div class="form-group">
+    {{ form_label(form.position) }}
+    <div class="col-lg-10">
+        {{ form_errors(form.position) }}
+        {{ form_widget(form.position) }}
+    </div>
+</div>
+{{ form_widget(form.tmpPath) }}
+{{ form_widget(form.path) }}
+<div class="form-group">
+    <label class="col-lg-2 control-label">
+        Fichier :
+    </label>
+
+    <div class="col-lg-10">
+        <img class="formFilePicture"
+             src="{% if form.vars.value %}{{ asset(form.vars.value.getWebPath(base)) }}{% endif %}"/>
+    </div>
+</div>

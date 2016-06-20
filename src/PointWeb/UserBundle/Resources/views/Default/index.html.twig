@@ -1,0 +1,8 @@
+{% for folder in folders %}
+    {{ folder.name }}
+    {% for picture in folder.pictures %}
+        {{ picture.name }}
+        {{ picture.description }}
+        <img src="{{ asset(picture.getWebPath(base)) }}" alt="{{ picture.name }}"/>
+        {% endfor %}
+{% endfor %}

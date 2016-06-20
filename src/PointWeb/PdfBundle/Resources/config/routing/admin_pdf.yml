@@ -1,0 +1,30 @@
+admin_pdf:
+    path:     /
+    defaults: { _controller: "PointWebPdfBundle:Pdf:index" }
+
+admin_pdf_show:
+    path:     /{id}/show
+    defaults: { _controller: "PointWebPdfBundle:Pdf:show" }
+
+admin_pdf_new:
+    path:     /new
+    defaults: { _controller: "PointWebPdfBundle:Pdf:new" }
+
+admin_pdf_create:
+    path:     /create
+    defaults: { _controller: "PointWebPdfBundle:Pdf:create" }
+    methods:  POST
+
+admin_pdf_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebPdfBundle:Pdf:edit" }
+
+admin_pdf_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebPdfBundle:Pdf:update" }
+    methods:  [POST, PUT]
+
+admin_pdf_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebPdfBundle:Pdf:delete" }
+#    methods:  [POST, DELETE]

@@ -1,0 +1,51 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block  content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Newsletter
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-paper-plane"></i> <a href="{{ path('admin_newsletter') }}">Gestion des newsletters</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-eye"></i> Voir
+            </li>
+        </ol>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">Objet</div>
+            <div class="panel-body">
+                {{ entity.object }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Auteur</div>
+            <div class="panel-body">
+                {{ entity.addresser }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Date d'envoie</div>
+            <div class="panel-body">
+                {{ entity.sendDate|date("d-m-Y") }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Message</div>
+            <div class="panel-body">
+                {{ entity.message|raw }}
+            </div>
+        </div>
+
+        <a href="{{ path('admin_newsletter') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Retour
+            à la liste</a>
+        <a href="{{ path('admin_newsletter_edit', { 'id': entity.id }) }}" class="btn btn-primary"><i
+                    class="fa fa-pencil"></i>
+            Modifier</a>
+        {{ form(delete_form) }}
+    </div>
+{% endblock %}

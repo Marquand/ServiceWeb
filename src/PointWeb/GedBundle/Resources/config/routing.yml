@@ -1,0 +1,3 @@
+point_web_ged_folder_admin:
+    resource: "@PointWebGedBundle/Resources/config/routing/admin_folder.yml"
+    prefix:   /admin/folder

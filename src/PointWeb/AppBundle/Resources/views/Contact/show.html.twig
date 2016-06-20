@@ -1,0 +1,77 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block  content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Message reçu
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-envelope"></i> <a href="{{ path('admin_contact') }}">Contact</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-eye"></i> Voir
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">Nom</div>
+            <div class="panel-body">
+                {{ entity.lastname }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Prénom</div>
+            <div class="panel-body">
+                {{ entity.firstname }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Téléphone</div>
+            <div class="panel-body">
+                {{ entity.phone }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Email</div>
+            <div class="panel-body">
+                {{ entity.email }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Adresse</div>
+            <div class="panel-body">
+                {{ entity.address }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Code postal</div>
+            <div class="panel-body">
+                {{ entity.zipCode }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Ville</div>
+            <div class="panel-body">
+                {{ entity.city }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Message</div>
+            <div class="panel-body">
+                {{ entity.message }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Date de création</div>
+            <div class="panel-body">
+                {{ entity.createDate|date('d-m-Y') }}
+            </div>
+        </div>
+
+        <a href="{{ path('admin_contact') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Retour à
+            la
+            liste</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    point_web_newsletter.example:
+#        class: PointWeb\NewsletterBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,33 @@
+Le commentaire suivant à été fait via votre site web
+
+<div class="panel panel-info">
+    <div class="panel-heading">Nom</div>
+    <div class="panel-body">
+        {{ entity.lastname }}
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">Prénom</div>
+    <div class="panel-body">
+        {{ entity.firstname }}
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">Email</div>
+    <div class="panel-body">
+        {{ entity.email }}
+    </div>
+</div>
+
+<div class="panel panel-info">
+    <div class="panel-heading">Commentaire</div>
+    <div class="panel-body">
+        {{ entity.comment }}
+    </div>
+</div>
+<div class="panel panel-info">
+    <div class="panel-heading">Date de création</div>
+    <div class="panel-body">
+        {{ entity.createDate|date('d-m-Y') }}
+    </div>
+</div>

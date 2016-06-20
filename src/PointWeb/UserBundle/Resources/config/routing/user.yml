@@ -1,0 +1,3 @@
+user:
+    path:     /
+    defaults: { _controller: "PointWebUserBundle:Default:index" }

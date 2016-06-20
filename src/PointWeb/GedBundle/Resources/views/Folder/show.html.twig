@@ -1,0 +1,62 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block  content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Dossier
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-file"></i> <a href="{{ path('admin_folder') }}">Gestion documentaire</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-eye"></i> Voir
+            </li>
+        </ol>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">Nom</div>
+            <div class="panel-body">
+                {{ entity.name }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Description</div>
+            <div class="panel-body">
+                {{ entity.description|raw }}
+            </div>
+        </div>
+
+        <div class="panel panel-info">
+            <div class="panel-heading">Position</div>
+            <div class="panel-body">
+                {{ entity.position }}
+            </div>
+        </div>
+        {% if entity.pictures|length >0 %}
+
+            <div class="panel panel-info">
+                <div class="panel-heading">Fichiers</div>
+                <div class="panel-body">
+                    <div id="gallery" style="display:none;">
+                        {% for picture in entity.pictures %}
+                            <img alt="{{ picture.name }}" src="{{ asset(picture.getWebPath(base)) }}"
+                                 data-image="{{ asset(picture.getWebPath(base)) }}"
+                                 data-description="{{ picture.description }}">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+        {% endif %}
+
+        <a href="{{ path('admin_folder') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Retour à la
+            liste</a>
+        <a href="{{ path('admin_folder_edit', { 'id': entity.id }) }}" class="btn btn-primary"><i
+                    class="fa fa-pencil"></i>
+            Modifier</a>
+        {{ form(delete_form) }}
+    </div>
+{% endblock %}

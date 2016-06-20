@@ -1,0 +1,12 @@
+{% extends 'PointWebAppBundle::base.html.twig' %}
+{% block content %}
+
+    <div id="sitemap">
+        <ul>
+            {% for url in urls  %}
+                <li><a href="http://{{  url.loc }}" target="_blank" alt="sitemap">{{  url.loc }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

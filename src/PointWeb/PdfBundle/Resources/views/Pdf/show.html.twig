@@ -1,0 +1,40 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Pdf</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>
+            <tr>
+                <th>Pdfname</th>
+                <td>{{ entity.pdfName }}</td>
+            </tr>
+            <tr>
+                <th>Pdffile</th>
+                <td>{{ entity.pdfFile }}</td>
+            </tr>
+            <tr>
+                <th>Createdate</th>
+                <td>{{ entity.createDate|date('Y-m-d H:i:s') }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('pdf') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('pdf_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}

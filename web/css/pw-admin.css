@@ -1,0 +1,433 @@
+/* Global Styles */
+
+body {
+    margin-top: 100px;
+    background-color: #222;
+}
+
+@media (min-width: 768px) {
+    body {
+        margin-top: 50px;
+    }
+}
+
+#wrapper {
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 0;
+    background-color: #fff;
+}
+
+.huge {
+    font-size: 50px;
+    line-height: normal;
+}
+
+@media (min-width: 768px) {
+    #wrapper {
+        padding-left: 225px;
+    }
+
+    #page-wrapper {
+        padding: 10px;
+    }
+}
+
+/* Top Navigation */
+
+.top-nav {
+    padding: 0 15px;
+}
+
+.top-nav > li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav > li > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #999;
+}
+
+.top-nav > li > a:hover,
+.top-nav > li > a:focus,
+.top-nav > .open > a,
+.top-nav > .open > a:hover,
+.top-nav > .open > a:focus {
+    color: #fff;
+    background-color: #000;
+}
+
+.top-nav > .open > .dropdown-menu {
+    float: left;
+    position: absolute;
+    margin-top: 0;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    background-color: #fff;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+
+.top-nav > .open > .dropdown-menu > li > a {
+    white-space: normal;
+}
+
+ul.message-dropdown {
+    padding: 0;
+    max-height: 250px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+li.message-preview {
+    width: 275px;
+    border-bottom: 1px solid rgba(0, 0, 0, .15);
+}
+
+li.message-preview > a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+li.message-footer {
+    margin: 5px 0;
+}
+
+ul.alert-dropdown {
+    width: 200px;
+}
+
+/* Side Navigation */
+
+@media (min-width: 768px) {
+    .side-nav {
+        position: fixed;
+        top: 51px;
+        left: 225px;
+        width: 225px;
+        margin-left: -225px;
+        border: none;
+        border-radius: 0;
+        overflow-y: auto;
+        background-color: #222;
+        bottom: 0;
+        overflow-x: hidden;
+        padding-bottom: 40px;
+    }
+
+    .side-nav > li > a {
+        width: 225px;
+    }
+
+    .side-nav li a:hover,
+    .side-nav li a:focus {
+        outline: none;
+        background-color: #000 !important;
+    }
+}
+
+.side-nav > li > ul {
+    padding: 0;
+}
+
+.side-nav > li > ul > li > a {
+    display: block;
+    padding: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: #999;
+}
+
+.side-nav > li > ul > li > a:hover {
+    color: #fff;
+}
+
+/* Flot Chart Containers */
+
+.flot-chart {
+    display: block;
+    height: 400px;
+}
+
+.flot-chart-content {
+    width: 100%;
+    height: 100%;
+}
+
+/* Custom Colored Panels */
+
+.huge {
+    font-size: 40px;
+}
+
+.panel-green {
+    border-color: #5cb85c;
+}
+
+.panel-green > .panel-heading {
+    border-color: #5cb85c;
+    color: #fff;
+    background-color: #5cb85c;
+}
+
+.panel-green > a {
+    color: #5cb85c;
+}
+
+.panel-green > a:hover {
+    color: #3d8b3d;
+}
+
+.panel-red {
+    border-color: #d9534f;
+}
+
+.panel-red > .panel-heading {
+    border-color: #d9534f;
+    color: #fff;
+    background-color: #d9534f;
+}
+
+.panel-red > a {
+    color: #d9534f;
+}
+
+.panel-red > a:hover {
+    color: #b52b27;
+}
+
+.panel-yellow {
+    border-color: #f0ad4e;
+}
+
+.panel-yellow > .panel-heading {
+    border-color: #f0ad4e;
+    color: #fff;
+    background-color: #f0ad4e;
+}
+
+.panel-yellow > a {
+    color: #f0ad4e;
+}
+
+.panel-yellow > a:hover {
+    color: #df8a13;
+}
+
+/** dropzone **/
+
+#dropZoneFile {
+    border: 2px dashed #0087F7;
+    border-radius: 5px;
+    background: #FFF none repeat scroll 0% 0%;
+    cursor: pointer;
+    color: #646C7F;
+    height: 150px;
+    vertical-align: baseline;
+}
+
+#dropZoneFile iframe {
+    opacity: 0;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+ul {
+    list-style: none;
+}
+
+.formFilePicture {
+    max-height: 100px;
+    max-width: 100px;
+}
+
+.menuParent {
+    display: none;
+}
+
+.menuParentHead a {
+    float: right;
+}
+
+td.sorter {
+    cursor: move;
+}
+
+.sorting-row td {
+    background-color: #C5E1A5;
+    color: rgba(0, 0, 0, 0.84);
+}
+
+#gallery {
+    margin: auto;
+}
+
+.form-price {
+    float: left;
+    width: 20%;
+}
+
+img.logo {
+    width: 120px;
+    top: -38px;
+    position: relative;
+}
+
+.panel-info h3 a {
+    display: block;
+    font-weight: bold
+}
+
+.form-group ul li {
+    color: #F44336;
+}
+
+.panel div {
+    word-wrap: break-word;
+}
+
+/*** CALENDAR ***/
+div.week {
+    display: block;
+    padding: 10px 0;
+    overflow-x: auto;
+}
+
+table.calendar {
+    border-left: 1px solid #999;
+    width: 100%;
+    border-collapse: inherit;
+}
+
+tr.calendar-row {
+}
+
+td.calendar-day {
+    min-height: 80px;
+    font-size: 15px;
+    position: relative;
+}
+
+td.calendar-day-head {
+    background: #ccc;
+    font-weight: bold;
+    text-align: center;
+    width: 16.6%;
+    padding: 5px;
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+}
+
+td.calendar-hours-head {
+    background: #ccc;
+    text-align: center;
+    width: 1.5%;
+    padding: 5px;
+    border-bottom: 1px solid #999;
+    border-top: 1px solid #999;
+    border-right: 1px solid #999;
+    font-size: 8px;
+}
+
+div.day-number {
+    background: #999;
+    padding: 5px;
+    color: #fff;
+    font-weight: bold;
+    width: 20px;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+td.calendar-day, td.calendar-day-np {
+    width: 120px;
+    padding: 5px;
+    border-bottom: 1px solid #999999 !important;
+    border-right: 1px solid #999999 !important;
+}
+
+div.hour {
+    width: 100%;
+    padding: 5px;
+    min-height: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+span.calendar-hour {
+    font-size: 8px;
+    position: relative;
+    top: -8px;
+}
+
+.add-event {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+div.noborder {
+    border: 0px;
+}
+
+.btn-group-left {
+    float: left;
+    width: 33%;
+}
+
+.btn-group-right {
+    float: left;
+    display: block;
+    text-align: right;
+    width: 33%;
+}
+
+.btn-group-center {
+    width: 33%;
+    float: left;
+}
+
+.btn-group-center form {
+    display: inline-block;
+}
+
+.filter-calendar {
+    display: block;
+    text-align: center;
+}
+
+.calendar-head {
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    padding: 50px 50px 0 50px;
+    background: white;
+}
+
+div.calendar-body {
+    width: 100%;
+    padding: 130px 0 0;
+}
+
+.div-counter {
+    font-style: italic;
+    text-align: right;
+}
+
+.div-counter.ok {
+    color: green;
+}
+
+.div-counter.nok {
+    color: red;
+}

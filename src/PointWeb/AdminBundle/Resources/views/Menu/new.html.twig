@@ -1,0 +1,75 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Création du menu
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-sitemap"></i> <a href="{{ path('admin_menu') }}">Menu</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-plus-circle"></i> Ajouter
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-12">
+        {{ form_start(form, {'attr': {'class':'form-horizontal' }}) }}
+        <fieldset>
+            <div class="form-group">
+                {{ form_label(form.title) }}
+                <div class="col-lg-10">
+                    {{ form_errors(form.title) }}
+                    {{ form_widget(form.title) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.description) }}
+                <div class="col-lg-10">
+                    {{ form_errors(form.description) }}
+                    {{ form_widget(form.description) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.path) }}
+                <div class="col-lg-10">
+                    {{ form_errors(form.path) }}
+                    {{ form_widget(form.path) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.position) }}
+                <div class="col-lg-10">
+                    {{ form_errors(form.position) }}
+                    {{ form_widget(form.position) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.parent) }}
+                <div class="col-lg-10">
+                    {{ form_errors(form.parent) }}
+                    {{ form_widget(form.parent) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-lg-2 control-label">
+                    Déplacez vos fichiers ou cliquez dans la zone :
+                </label>
+
+                <div id="dropZoneFile" class="col-lg-10">
+                    <iframe src="{{ path('point_web_admin_update') }}">
+                    </iframe>
+                </div>
+            </div>
+            <ul class="files"
+                data-prototype="{% filter escape %}{% include 'PointWebAdminBundle:Form:prototype.html.twig' with {'form': form.pictures.vars.prototype} %}{% endfilter %}">
+            </ul>
+        </fieldset>
+        {% do form.pictures.setRendered %}
+        {{ form_end(form) }}
+
+        <a href="{{ path('admin_menu') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i> Retour à la
+            liste</a>
+    </div>
+{% endblock %}

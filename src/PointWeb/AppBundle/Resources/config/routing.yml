@@ -1,0 +1,47 @@
+point_web_app_homepage:
+    path:     /
+    defaults: { _controller: PointWebAppBundle:Default:index }
+
+point_web_app_introduction:
+    path:     /introduction
+    defaults: { _controller: PointWebAppBundle:Default:introduction }
+
+execute:
+    path:     /execute
+    defaults: { _controller: PointWebAppBundle:Default:execute }
+
+point_web_app_legal:
+    path:     /legal
+    defaults: { _controller: PointWebAppBundle:Default:legal }
+
+point_web_app_sitemap:
+    path:     /sitemap
+    defaults: { _controller: PointWebAppBundle:Default:sitemap }
+
+point_web_app_sitemapXml:
+    path:     /sitemap.xml
+    defaults: { _controller: PointWebAppBundle:Default:sitemapXml }
+
+point_web_app_contact:
+    path:     /contact
+    defaults: { _controller: PointWebAppBundle:Default:contact }
+    
+point_web_app_cookies:
+    path:     /cookies
+    defaults: { _controller: PointWebAppBundle:Default:cookies }
+
+point_web_app_thanks:
+    path:     /thanks
+    defaults: { _controller: PointWebAppBundle:Default:thanks }
+
+point_web_contact_admin:
+    resource: "@PointWebAppBundle/Resources/config/routing/admin_contact.yml"
+    prefix:   /admin/contact
+
+point_web_app_awsindex:
+    path:     /awsindex.html
+    defaults: { _controller: PointWebAppBundle:Default:awsindex }
+
+point_web_app_stats:
+    path:     /pwstats
+    defaults: { _controller: PointWebAppBundle:Default:stats }

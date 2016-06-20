@@ -1,0 +1,25 @@
+{% for menu in entity.childrens %}
+    <div class="list-group-item">
+        <div class="row-action-primary">
+            <i class="mdi-file-folder"></i>
+        </div>
+        <div class="row-content">
+            <h4 class="list-group-item-heading menuParentHead">{{ menu.title }}
+                <a href="{{ path('admin_menu_show', {'id':menu.id}) }}" class="btn btn-primary"><i
+                            class="fa fa-eye"></i> Voir</a>
+                <a href="{{ path('admin_menu_edit', {'id':menu.id}) }}" class="btn btn-primary"><i
+                            class="fa fa-pencil"></i> Modifier</a>
+                {% if menu.childrens|length > 0 %}
+                    <span href="#" class="menuParent"
+                          data-url="{{ path('admin_menu_submenu', {'id':menu.id}) }}"
+                          data-id="{{ menu.id }}">
+                    </span>
+                {% endif %}
+            </h4>
+
+            <p class="list-group-item-text">{{ menu.description|raw }}</p>
+        </div>
+
+        <div id="menuChilds-{{ menu.id }}" class="menuChilds list-group"></div>
+    </div>
+{% endfor %}

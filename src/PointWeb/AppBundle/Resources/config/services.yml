@@ -1,0 +1,10 @@
+services:
+#    point_web_app.example:
+#        class: PointWeb\AppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
+    pointweb.twig.app_extension:
+        class: PointWeb\AppBundle\Twig\AppExtension
+        arguments:
+            em: "@doctrine.orm.entity_manager"
+        tags:
+            - { name: twig.extension }

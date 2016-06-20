@@ -1,0 +1,63 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Modifier le referencement de la page
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-bookmark"></i> <a href="{{ path('admin_referencing') }}">Referencement des pages</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-pencil-square"></i> Modification
+            </li>
+        </ol>
+    </div>
+    <div class="col-lg-12">
+        {{ form_start(edit_form, {'attr': {'class':'form-horizontal' }}) }}
+        <fieldset>
+
+            <div class="form-group">
+                {{ form_label(edit_form.title) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.title) }}
+                    {{ form_widget(edit_form.title) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.h1) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.h1) }}
+                    {{ form_widget(edit_form.h1) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.h1Title) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.h1Title) }}
+                    {{ form_widget(edit_form.h1Title) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.description) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.description) }}
+                    {{ form_widget(edit_form.description) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(edit_form.path) }}
+                <div class="col-lg-10">
+                    {{ form_errors(edit_form.path) }}
+                    {{ form_widget(edit_form.path) }}
+                </div>
+            </div>
+        </fieldset>
+        {{ form_end(edit_form) }}
+
+        <a href="{{ path('admin_referencing') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i>
+            Retour &agrave; la
+            liste</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,4 @@
+services:
+#    point_web_pdf.example:
+#        class: PointWeb\PdfBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

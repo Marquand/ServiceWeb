@@ -1,0 +1,41 @@
+point_web_newsletter:
+    resource: "@PointWebNewsletterBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+point_web_referencing:
+    resource: "@PointWebReferencingBundle/Resources/config/routing.yml"
+    prefix:   /
+
+point_web_ged:
+    resource: "@PointWebGedBundle/Resources/config/routing.yml"
+    prefix:   /
+
+point_web_user:
+    resource: "@PointWebUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+point_web_admin:
+    resource: "@PointWebAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+point_web_app:
+    resource: "@PointWebAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+point_web_pdf:
+    resource: "@PointWebPdfBundle/Resources/config/routing.yml"
+    prefix:   /
+
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+pageNotFound:
+    pattern:  /{path}
+    defaults: { _controller: PointWebAppBundle:Default:pageNotFound, path: '' }
+    requirements:
+        path: .*
+

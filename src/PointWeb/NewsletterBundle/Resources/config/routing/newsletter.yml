@@ -1,0 +1,9 @@
+newsletter:
+    path:     /
+    defaults: { _controller: "PointWebNewsletterBundle:Default:newsletter" }
+
+newsletter_remove:
+    path:     /abonne/delete
+    defaults: { _controller: "PointWebNewsletterBundle:Default:remove" }
+    requirements:
+        id: \d+

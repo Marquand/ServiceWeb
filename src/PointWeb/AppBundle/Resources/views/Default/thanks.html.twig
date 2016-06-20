@@ -1,0 +1,13 @@
+{% extends 'PointWebAppBundle::base.html.twig' %}
+{% block content %}
+<div class="row" id="">
+    <h2 class="titre_section" title="">Message <span>envoyé</span></h2>
+    <hr class="separator">
+    
+    <p class="paragraphe center">Nous avons bien reçu votre message. Une réponse vous sera adressée dans les plus brefs délais.</p>
+    
+    <div class="center">
+        <a href="{{path('point_web_app_homepage')}}" class="link">Aller à l'accueil</a>
+    </div>
+</div>
+{% endblock %}

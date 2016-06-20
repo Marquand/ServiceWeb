@@ -1,0 +1,46 @@
+{% extends 'PointWebAdminBundle::base.html.twig' %}
+
+{% block  content_right %}
+    <div class="col-lg-12">
+        <h1 class="page-header">
+            Groupe
+        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-database"></i> <a href="{{ path('admin_newsletter_group') }}">Gestion des groupes</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-eye"></i> Voir
+            </li>
+        </ol>
+    </div>
+
+    <div class="col-lg-12">
+        <div class="panel panel-info">
+            <div class="panel-heading">Nom du groupe</div>
+            <div class="panel-body">
+                {{ entity.name }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Description du groupe</div>
+            <div class="panel-body">
+                {{ entity.description|raw }}
+            </div>
+        </div>
+        <div class="panel panel-info">
+            <div class="panel-heading">Date de création</div>
+            <div class="panel-body">
+                {{ entity.createDate|date("d-m-Y") }}
+            </div>
+        </div>
+
+        <a href="{{ path('admin_newsletter_group') }}" class="btn btn-primary"><i class="fa fa-arrow-circle-left"></i>
+            Retour
+            à la liste</a>
+        <a href="{{ path('admin_newsletter_group_edit', { 'id': entity.id }) }}" class="btn btn-primary"><i
+                    class="fa fa-pencil"></i>
+            Modifier</a>
+        {{ form(delete_form) }}
+    </div>
+{% endblock %}

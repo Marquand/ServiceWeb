@@ -1,0 +1,35 @@
+admin_menu:
+    path:     /
+    defaults: { _controller: "PointWebAdminBundle:Menu:index" }
+
+admin_menu_show:
+    path:     /{id}/show
+    defaults: { _controller: "PointWebAdminBundle:Menu:show" }
+
+admin_menu_new:
+    path:     /new
+    defaults: { _controller: "PointWebAdminBundle:Menu:new" }
+
+admin_menu_create:
+    path:     /create
+    defaults: { _controller: "PointWebAdminBundle:Menu:create" }
+    methods:  POST
+
+admin_menu_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebAdminBundle:Menu:edit" }
+
+admin_menu_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebAdminBundle:Menu:update" }
+    methods:  [POST, PUT]
+
+admin_menu_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebAdminBundle:Menu:delete" }
+    methods:  [POST, DELETE]
+
+admin_menu_submenu:
+    path:     /submenu/{id}
+    defaults: { _controller: "PointWebAdminBundle:Menu:subMenu" }
+    methods:  [GET]

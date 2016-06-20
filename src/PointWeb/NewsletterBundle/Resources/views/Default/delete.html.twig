@@ -1,0 +1,20 @@
+{% extends 'PointWebAppBundle::base.html.twig' %}
+{% block content %}
+    <div class="cnt-home">
+        <div class="row">
+            <h3 title="Produits de <--Nom cat--> 49" class="txt-cntr upper grey2 fs-13">Vous ne souhaitez plus revecvoir
+                de newsletter ? </h3>
+
+            {% if error is defined %}
+                {% if error != " " %}
+                    {{ error|raw }}
+                {% endif %}
+            {% endif %}
+            <form class="nws-inscrption" action="{{ path('newsletter_remove') }}" method="POST">
+                <input type="text" name="email" placeholder="Votre e-mail..." class="right"/>
+                <input class="right wht" type="submit" value="Se Désinscrire">
+            </form>
+
+        </div>
+    </div>
+{% endblock %}

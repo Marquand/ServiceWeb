@@ -1,0 +1,34 @@
+admin_folder:
+    path:     /
+    defaults: { _controller: "PointWebGedBundle:Folder:index" }
+
+admin_folder_show:
+    path:     /{id}/show
+    defaults: { _controller: "PointWebGedBundle:Folder:show" }
+
+admin_folder_new:
+    path:     /new
+    defaults: { _controller: "PointWebGedBundle:Folder:new" }
+
+admin_folder_create:
+    path:     /create
+    defaults: { _controller: "PointWebGedBundle:Folder:create" }
+    methods:  POST
+
+admin_folder_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "PointWebGedBundle:Folder:edit" }
+
+admin_folder_update:
+    path:     /{id}/update
+    defaults: { _controller: "PointWebGedBundle:Folder:update" }
+    methods:  [POST, PUT]
+
+admin_folder_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "PointWebGedBundle:Folder:delete" }
+    methods:  [POST, DELETE]
+
+admin_folder_sort:
+    path:     /{id}/sort
+    defaults: { _controller: "PointWebGedBundle:Folder:sort" }

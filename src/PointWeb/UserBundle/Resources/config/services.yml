@@ -1,0 +1,4 @@
+services:
+#    point_web_user.example:
+#        class: PointWeb\UserBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

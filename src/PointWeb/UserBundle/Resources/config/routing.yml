@@ -1,0 +1,6 @@
+point_web_user_user:
+    resource: "@PointWebUserBundle/Resources/config/routing/admin_user.yml"
+    prefix:   /admin/user
+point_web_user_profile:
+    resource: "@PointWebUserBundle/Resources/config/routing/user.yml"
+    prefix:   /profile

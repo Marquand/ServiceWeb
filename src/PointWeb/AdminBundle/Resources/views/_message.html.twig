@@ -1,0 +1,30 @@
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b
+            class="caret"></b></a>
+<ul class="dropdown-menu message-dropdown">
+    {% if entities|length>0 %}
+        {% for entity in entities %}
+            <li class="message-preview">
+                <a href="{{ path('admin_contact_show', { 'id': entity.id }) }}">
+                    <div class="media">
+                        <div class="media-body">
+                            <h5 class="media-heading">
+                                <strong>{{ entity.firstname }} {{ entity.lastname }}</strong>
+                            </h5>
+                            <p class="small text-muted"><i
+                                        class="fa fa-clock-o"></i> {{ entity.createDate|date('d-m-Y') }}
+                            </p>
+                            <p>{{ entity.message|raw }}</p>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    {% else %}
+        <li class="message-preview">
+            Aucun message
+        </li>
+    {% endif %}
+    <li class="message-footer">
+        <a href="{{ path('admin_contact') }}">Voir tous les messages</a>
+    </li>
+</ul>
